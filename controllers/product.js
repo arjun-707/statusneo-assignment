@@ -115,7 +115,6 @@ const listAllProduct = (req, res) => {
   }
   if (!limit || isNaN(limit)) limit = 5
   if (!page || isNaN(page)) page = 1
-  console.log((page-1)*limit, page*limit, productsDetail.length)
   return sendResponse(res, 200, msg, {
     total: filteredProductsDetail.length,
     products: productsDetail.slice((page-1)*limit, page*limit),
